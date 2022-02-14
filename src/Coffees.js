@@ -4,12 +4,12 @@ function Coffees() {
     const [coffeeList, setCoffeeList] = useState();
     const [temperature, setTemperature] = useState('hot');
     useEffect(() => {
-fetch('https://api.sampleapis.com/coffee/${temperature}')
+fetch(`https://api.sampleapis.com/coffee/${temperature}`)
         .then( response => response.json())
         .then(data => setCoffeeList(data))
         .catch(err => console.error(err))
 
-    },[])
+    },[temperature])
     return (
         <section className="coffee-container" id= "Coffees">
         <h2>Coffee Recipes</h2>
